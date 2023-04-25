@@ -17,17 +17,6 @@
  */
 //#include <stdio.h>
 
-#define rx_ringbuf_size 10
-
-typedef struct ringbuffer_t
-{
-	volatile unsigned int read_index;           /* 当前读位置 */
-	volatile unsigned int write_index;          /* 当前写位置 */  
-	unsigned int buffer_size;					/* ringbuffer大小 */
-    unsigned char *buffer_ptr;  				/* 指向ringbuffer */    
-} ringbuffer_t;
-
-
 
 unsigned char rx_ringbuf[rx_ringbuf_size] = {0};
 ringbuffer_t rx_ringbuf_handle = {0};
